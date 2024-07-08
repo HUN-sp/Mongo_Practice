@@ -1,21 +1,25 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-require('dotenv').config()
-
-
+require('dotenv').config();
 app.use(express.json());
 
+
+
 mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    console.log("Db Connected");
-  })
-  .catch((err) => {
-    console.log("Db connection Failed", err);
-  });
+.connect(process.env.MONGO_URL)
+.then(() => {
+  console.log("Db Connected");
+})
+.catch((err) => {
+  console.log("Db connection Failed", err);
+});
 
+const productRoutes = require('./routes/productRoutes')
+const userRoutes = require('./routes/userRoutes')
 
+app.use("/products", productRoutes);
+app.use("/users", userRoutes);
 
 
 
