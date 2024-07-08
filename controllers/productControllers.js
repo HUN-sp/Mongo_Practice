@@ -37,5 +37,4 @@ exports.createProduct = async (req, res) => {
   
     res.json(deletedProduct)
   }
-
  
