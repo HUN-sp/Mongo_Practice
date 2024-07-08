@@ -19,10 +19,6 @@ mongoose
 
 
 
-// Create
-
-
-
 app.listen(8086, () => {
   console.log("Server sarted at port 8086");
 });
